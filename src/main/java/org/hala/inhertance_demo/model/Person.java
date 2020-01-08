@@ -2,7 +2,7 @@ package org.hala.inhertance_demo.model;
 
 import java.time.LocalDate;
 
-public class Person {
+public abstract class Person implements Walkable {
     protected String name;
     protected LocalDate birthDate;
 
@@ -29,9 +29,11 @@ public class Person {
 
     @Override
     public String toString() {
-        return "Person{" +
-                "name='" + name + '\'' +
-                ", birthDate=" + birthDate +
-                '}';
+        StringBuilder sb = new StringBuilder();
+        sb.append("Person{");
+        sb.append("name='"+name);
+        sb.append("\', birthDate="+ birthDate);
+        sb.append("}");
+        return sb.toString();
     }
 }
