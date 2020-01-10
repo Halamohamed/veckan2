@@ -41,13 +41,13 @@ public class TimeAPI {
         LocalDate birthdate = LocalDate.of(1985,12,24);
         Period period = Period.between(birthdate,todayPlus10);
 
-        System.out.println("7: is leap year: " + birthdate.isLeapYear() + " months " + period.getMonths() + " days " + period.getDays());
+        System.out.println("7: Period b/n birthDate and todayPlus10: is leap year: " + birthdate.isLeapYear() + ", months " + period.getMonths() + ", days " + period.getDays());
 
         //Exc8
         Period period1 = Period.ofYears(4).plus(Period.ofMonths(7)).plus(Period.ofDays(29));
         LocalDate currentDay = LocalDate.now().plus(period1);
-        System.out.println(today);
-        System.out.println("8: current day + 4years + 7months + 29days: " + currentDay);
+        //System.out.println(today);
+        System.out.println("8: current day"+  today+" + 4years + 7months + 29days: " + currentDay);
 
         //Exc9
         LocalTime localTime = LocalTime.now();
@@ -73,7 +73,6 @@ public class TimeAPI {
         System.out.println("13: creating LocalDateTime. date: " + fifthApril + ", time: " + clock10);
 
         //Exc14
-        //LocalDateTime localDateTimeFormat = LocalDateTime.parse(fifthApril, DateTimeFormatter.ofPattern(clock10));
         String localDateTimeString = localDateTime.format(DateTimeFormatter.ofPattern("eeee dd MMM hh:mm"));
         System.out.println("14: LocalDateTime using DateTimeFormatter: " + localDateTimeString);
 
