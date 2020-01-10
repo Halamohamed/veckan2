@@ -5,10 +5,11 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Reader {
-    public static List<String> read(String url){
-        BufferedReader reader = null;
+    public static List<String> read(String url)throws IOException{
+       /* BufferedReader reader = null;
         try {
             reader = Files.newBufferedReader(Paths.get(url));
         }catch (IOException e){
@@ -21,7 +22,9 @@ public class Reader {
                     e.printStackTrace();
                 }
             }
-        }
-        return (List<String>) reader;
+        }*/
+        return Files.newBufferedReader(Paths.get(url))
+                .lines()
+                .collect(Collectors.toList());
     }
 }
