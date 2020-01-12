@@ -10,8 +10,8 @@ public class Calendar {
 
     public Calendar(){
 
-        localDate = LocalDate.now();
-        localTime = LocalTime.now();
+        localDate = LocalDate.parse("2018-01-01");
+        localTime = LocalTime.parse("00:00");
     }
 
     public LocalDate getLocalDate() {
@@ -50,18 +50,18 @@ public class Calendar {
 
     public static void main(String[] args) {
         Calendar calendar = new Calendar();
+        System.out.println(calendar.getYear());
         for (int i=0; i<12; i++){
-
-            if(i==0) System.out.println(calendar.getJanuary());
+            if(i==0) System.out.println(calendar.getMonth().plus(i));
             System.out.println("MON\tTUS\tWED\tTHU\tFRI\tSAT\tSUN");
 
-            for (int j=0; j<31; j++){
+            for (int j=0; j<30; j++){
                 System.out.print( j+1 + "\t");
-                if(j==7 || j==14 || j==21){
+                if(j==6 || j==13 || j==20 || j==27){
                     System.out.println();
                 }
-                if(j==30){
-                    System.out.println(calendar.getMonth().plus(calendar.periodOneMonth()));
+                if(j==29){
+                    System.out.println("\n" + calendar.getMonth().plus(i+1));
                 }
             }
 
